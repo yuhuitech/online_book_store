@@ -1,0 +1,102 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,section, article, aside, header, footer, nav, dialog, figure,menu,hgroup,iframe{ margin:0; padding:0; border:0; }
+html{ -webkit-text-size-adjust:none;}
+body{ font-family:"Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif; font-size:14px; line-height:24px; background:#ffffff;  -webkit-font-smoothing: antialiased; -moz-font-smoothing: antialiased;  font-smoothing: antialiased;  color:#333; }
+
+input,textarea{ resize:none; font-family:"Microsoft YaHei"; background: #fff; border: 0;  }
+img{ border:none; vertical-align:middle; }
+ul,li{ list-style:none;}
+a{ text-decoration:none; color:#333; outline:none;cursor:pointer }
+a:hover{ color:#f86928;}
+input:focus,textarea:focus{ outline:none; }
+
+/*======*/
+body{}
+.box{ width:100%; min-width:980px;overflow:hidden }
+.con{ width:980px;margin:0 auto;}
+.clear{ clear:both}
+.or{ overflow:hidden;}
+.fl{ float:left}
+.fr{ float:right}
+.w750{ width:750px}
+.w200{ width:200px}
+.gray{ background:#f7f7f7; min-height:1500px}
+
+
+.top{ background:#f7f7f7; border-bottom:1px solid #ebebeb; height:34px;line-height:34px;font-size:12px; }
+.top a{ line-height:34px;font-size:12px; margin-left:20px }
+
+
+
+.header{ height:136px;}
+.header .header1{padding:30px 0px 41px 30px}
+.header .header1 .logo{ margin-right:60px}
+
+.header .menu{height:30px; line-height:30px;}
+.header .menu ul{  text-align:center}
+.header .menu ul li{ float:left; margin-left:3px; }
+.header .menu ul li:first-child{ margin-left:0}
+.header .menu ul li a{ display:inline-block; width:90px; background:#42659a; color:white;}
+.header .menu ul li a:hover{ background:#db323b;display:inline-block; }
+
+.header .search{width:302px;border:1px solid #ccc;border-radius:3px; background:white}
+.header .search input{ float:left; }
+.header .search .txt{width:250px;  height:16px; line-height:16px; font-size:12px; padding:8px; border:0; }
+.header .search button{ width:32px; border:none; height:33px; background:white}
+.header .search button i{background:url(../images/icon.png) no-repeat 0 -48px; vertical-align:-3px; display:inline-block; width:16px; height:16px;}
+
+.nav li.tit{display:inline-block; width:200px; background:#42659a; color:white;height:30px; line-height:30px; text-align:center}
+.nav li.tit2{background:#a59982; margin-top:10px; margin-bottom:10px}
+.nav li a{ display:inline-block; margin-left:60px;height:36px; line-height:36px; }
+.nav li a:hover{}
+.nav li a::before{ content:' ';display:inline-block; width:0px; height:0px;border-top:3px solid transparent;border-bottom:3px solid transparent;border-left:4px solid #acacac; vertical-align:middle; margin-right:10px;}
+.nav li a:hover::before{content:' ';display:inline-block; width:0px; height:0px;border-top:3px solid transparent;border-bottom:3px solid transparent;border-left:4px solid #f86928; vertical-align:middle; margin-right:10px;}
+
+.main{ }
+
+.banner{ height:240px; background:url(../images/banner.jpg) top no-repeat; margin:20px auto}
+.banner a{ display:inline-block; width:100%; height:100%}
+
+.main .section1{}
+.main .section1 h1{padding:0 12px;font-weight:normal;font-size:14px; line-height:32px; background:#e8e8e8;text-transform:uppercase}
+.main .section1 h1 span{ float:right}
+.main .section1 h1 span a{ color:#888;font-size:12px; line-height:32px;}
+
+.main .section1_con ,.main .section3_con {padding:18px 0;}
+.main .section1_con dl{ display:inline-block; height:205px; overflow:hidden; margin-right:23px}
+.main .section1_con dl:last-child{margin-right:0}
+.main .section1_con dt{border:1px solid #ccc; width:230px; height:160px; text-align:center;display:table-cell;max-width:230px; max-height:160px; vertical-align:middle;}
+.main .section1_con dt img{ margin:0 auto}
+.main .section1_con dd{text-align:center;color:#333;font-size:12px;}
+.main .section1_con dd p a{ color:#000; font-size:12px}
+.main .section1_con dd p b{ color:red;font-size:14px}
+
+.main .section2_con dl{ display:inline-block; height:160px; overflow:hidden; margin-right:25px}
+.main .section2_con dl:last-child{margin-right:0}
+.main .section2_con dl dt{ border:0}
+
+.main .section3_con dl{ display:inline-block; height:90px; overflow:hidden; margin-right:8px}
+.main .section3_con dl:last-child{margin-right:0}
+.main .section3_con dt{ background:#fafafa; width:140px; height:90px; text-align:center;display:table-cell;max-width:140px; max-height:90px; vertical-align:middle;}
+
+.footer{color:#959595;font-size:12px; padding-top:20px ; padding-bottom:20px ; margin-top:40px; border-top:1px solid #ccc}
+.footer p{text-align:center;line-height:40px}
+.footer p a{ padding:0 10px}
+
+/*icon*/
+.top a.nick i{  font-style:normal;display:inline-block; width:0px; height:0px;border-left:3px solid transparent;border-right:3px solid transparent;border-top:4px solid #000; vertical-align:middle; margin-left:5px;}
+.top a.nick:hover i{  display:inline-block; width:0px; height:0px;border-left:3px solid transparent;border-right:3px solid transparent;border-top:4px solid #f86928; vertical-align:middle; margin-left:5px;}
+
+.top a.notice i,.top a.fav i,.top a.kefu i{background:url(../images/icon.png) no-repeat; display:inline-block;width:16px; height:13px; margin-right:5px}
+.top a.notice i{ background-position:0 0; vertical-align:-3px}
+.top a.fav i{ background-position:-16px 0;vertical-align:-1px}
+.top a.kefu i{ background-position:0 -13px; height:15px;}
+
+
+.header .menu ul li a.cart{ position:relative}
+.header .menu ul li a.cart i{background:url(../images/icon.png) no-repeat 0 -28px; display:inline-block;width:18px; height:20px; position:absolute; top:5px; left:8px}
+.header .menu ul li a.cart span{ background:red; color:white; width:18px; height:9px; border-radius:9px;display:inline-block; position:absolute;left:15px;margin-top:-9px; padding-bottom:9px; padding-top:-9px}
+
+.footer p a.wb,.footer p a.ecode{width:20px; height:40px;border-radius:20px; background:#fafafa; display:inline-block; margin:0 10px}
+.footer p a.wb i,.footer p a.ecode i{width:22px; height:22px; margin-top:10px;  display:inline-block; background:url(../images/icon.png) no-repeat;}
+.footer p a.wb i{ background-position:0 -88px;width:28px; margin-left:-3px}
+.footer p a.ecode i{ background-position:0 -66px;}

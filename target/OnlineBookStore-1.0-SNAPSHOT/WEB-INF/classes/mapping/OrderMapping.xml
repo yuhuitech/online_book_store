@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="operations.OrderDAO">
+
+    <resultMap id="OrderResultMap" type="basis.Order">
+        <result property="orderId" column="orderID"/>
+        <result property="userId" column="userID"/>
+        <result property="orderDate" column="date"/>
+        <result property="status" column="status"/>
+        <result property="totalItem" column="totalItem"/>
+        <result property="totalPrice" column="totalPrice"/>
+    </resultMap>
+
+    <select id="get" resultMap="OrderResultMap">
+        SELECT * FROM online_bookstore.order
+        <where>
+            userID = '${userID}'
+        </where>
+    </select>
+
+    <insert id="add">
+        insert into online_bookstore.order
+        value (#{orderID},#{userID},#{date},
+        #{status},#{totalItem},#{totalPrice});
+    </insert>
+
+    <select id="getAllOrder" resultMap="OrderResultMap">
+        SELECT * FROM online_bookstore.order
+    </select>
+
+    <update id="changeOrder">
+        UPDATE online_bookstore.order
+        <trim prefix="set" suffixOverrides=",">
+            <if test="status!=&quot;&quot;">status = '${status}',</if>
+            <if test="totalPrice>0">totalPrice = ${totalPrice},</if>
+        </trim>
+        WHERE orderID = '${orderID}'
+    </update>
+
+</mapper>

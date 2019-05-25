@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="operations.BookDAO">
+
+    <resultMap id="BookResultMap" type="basis.Book">
+        <result property="bookId" column="id"/>
+        <result property="name" column="title"/>
+        <result property="price" column="price"/>
+        <result property="date" column="publishDate"/>
+        <result property="quantity" column="inventory"/>
+        <result property="categoryId" column="category"/>
+        <result property="writer" column="writer"/>
+    </resultMap>
+
+    <select id="getPrice" resultType="double">
+        SELECT price FROM books
+        <where>
+            id = '${bookID}'
+        </where>
+    </select>
+
+    <select id="getWriter" resultType="string">
+        SELECT writer FROM books
+        <where>
+            id = '${bookID}'
+        </where>
+    </select>
+
+    <select id="getBooksAll" resultMap="BookResultMap">
+        SELECT * FROM books
+    </select>
+
+    <select id="getBook" resultMap="BookResultMap">
+        SELECT * FROM books
+        <where>
+            id = '${bookID}'
+        </where>
+    </select>
+
+    <select id="getTitle" resultType="string">
+        SELECT title FROM books
+        <where>
+            id = '${bookID}'
+        </where>
+    </select>
+
+    <select id="getBooks" resultMap="BookResultMap">
+        SELECT DISTINCT * FROM books
+        <where>
+            <if test="bookID!=&quot;&quot;">
+                AND id = '${bookID}'
+            </if>
+            <if test="title!=&quot;&quot;">
+                AND title = '${title}'
+            </if>
+            <if test="price>0">
+                AND price = '${price}'
+            </if>
+            <if test="publishDate!=&quot;&quot;">
+                AND publishDate = '${publishDate}'
+            </if>
+            <if test="inventory > 0">
+                AND inventory = '${inventory}'
+            </if>
+            <if test="category!=&quot;&quot;">
+                AND category = '${category}'
+            </if>
+            <if test="writer!=&quot;&quot;">
+                AND writer = '${writer}'
+            </if>
+        </where>
+    </select>
+
+    <update id="changeBook">
+        UPDATE books
+        <trim prefix="set" suffixOverrides=",">
+            <if test="title!=&quot;&quot;">title = '${title}',</if>
+            <if test="price>0">price = ${price},</if>
+            <if test="publishDate!=&quot;&quot;">publishDate = '${publishDate}',</if>
+            <if test="inventory>=0">inventory = ${inventory},</if>
+            <if test="category!=&quot;&quot;">category = '${category}',</if>
+            <if test="writer!=&quot;&quot;">writer = '${writer}',</if>
+        </trim>
+        WHERE id = '${bookID}'
+    </update>
+
+    <delete id="deleteBook">
+        DELETE FROM books WHERE id = '${bookID}'
+    </delete>
+
+    <insert id="addBook">
+        insert into online_bookstore.books(id, title, price, publishDate, inventory, category, writer)
+        values(#{bookID}, #{title}, #{price}, #{publishDate}, #{inventory}, #{category},'${writer}')
+    </insert>
+
+</mapper>

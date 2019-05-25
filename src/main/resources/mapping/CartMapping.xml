@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="operations.CartDAO">
+
+    <resultMap id="CartResultMap" type="basis.ShopCart">
+        <result property="userID" column="userID"/>
+        <result property="bookID" column="bookID"/>
+        <result property="totalItem" column="amount"/>
+        <result property="state" column="state"/>
+    </resultMap>
+
+    <select id="get" resultMap="CartResultMap">
+        SELECT * FROM online_bookstore.cart
+        <where>
+            userID = '${userID}'
+        </where>
+    </select>
+
+    <select id="getByBookId" resultType="int">
+        SELECT COUNT(*) FROM online_bookstore.cart
+        <where>
+            bookID = '${bookID}' AND userID = '${userID}'
+        </where>
+    </select>
+
+    <insert id="add">
+        insert into online_bookstore.cart (userID, bookID, amount)  value ('${userID}','${bookID}',${totalItem});
+    </insert>
+
+    <update id="alterAmounts">
+        UPDATE online_bookstore.cart
+        set amount = ${totalItem}
+        WHERE userID='${userID}'
+        and bookID = '${bookID}'
+    </update>
+
+    <update id="alterState">
+        UPDATE online_bookstore.cart
+        set state = '${state}'
+        WHERE userID='${userID}'
+        and bookID = '${bookID}'
+    </update>
+
+    <update id="addAmounts" parameterType="int">
+        UPDATE online_bookstore.cart
+        set amount = amount + ${amount}
+        WHERE userID='${userID}'
+        and bookID = '${bookID}'
+    </update>
+
+    <delete id="delete">
+        DELETE FROM online_bookstore.cart
+        <where>
+            <if test="userID!=&quot;&quot;">
+                AND userID='${userID}'
+            </if>
+            <if test="bookID!=&quot;&quot;">
+                AND bookID = '${bookID}'
+            </if>
+        </where>
+    </delete>
+
+</mapper>

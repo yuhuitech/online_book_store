@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+          http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <!--<welcome-file-list>-->
+        <!--<welcome-file>BookIntroPage.html</welcome-file>-->
+    <!--</welcome-file-list>-->
+
+    <listener>
+        <listener-class>controller.SQLConnectListner</listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>controller.SessionListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>LoginAndRegister</servlet-name>
+        <servlet-class>controller.LoginAndRegisterServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LoginAndRegister</servlet-name>
+        <url-pattern>/loginAndRegister</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ShopCart</servlet-name>
+        <servlet-class>controller.ShopCartServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ShopCart</servlet-name>
+        <url-pattern>/ShopCart</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>OrderManagement</servlet-name>
+        <servlet-class>controller.OrderManagement</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>OrderManagement</servlet-name>
+        <url-pattern>/OrderManagement</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BookManage</servlet-name>
+        <servlet-class>controller.BookManagement</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>BookManage</servlet-name>
+        <url-pattern>/BookManage</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>index</servlet-name>
+        <jsp-file>/goodDetail.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>index</servlet-name>
+        <url-pattern>/goodDetail</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>catalog</servlet-name>
+        <jsp-file>/catalog.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>catalog</servlet-name>
+        <url-pattern>/catalog</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OrderSuccess</servlet-name>
+        <jsp-file>/ordersuccess.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderSuccess</servlet-name>
+        <url-pattern>/OrderSuccess</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OrderManager</servlet-name>
+        <servlet-class>controller.OrderManager</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderManager</servlet-name>
+        <url-pattern>/OrderManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UserManager</servlet-name>
+        <servlet-class>controller.UserManagement</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserManager</servlet-name>
+        <url-pattern>/UserManager</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>

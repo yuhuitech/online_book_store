@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="operations.AccountDAO">
+
+    <resultMap id="loginResultMap" type="basis.Account">
+        <result property="userId" column="id"/>
+        <result property="type" column="type"/>
+        <result property="userName" column="name"/>
+        <result property="tel" column="phone"/>
+        <result property="password" column="password"/>
+    </resultMap>
+
+    <select id="loginByID" resultMap="loginResultMap">
+        SELECT * FROM online_bookstore.user
+        <where>
+            id = '${userId}'
+            AND  password = '${password}'
+        </where>
+    </select>
+
+    <select id="loginByPhone" resultMap="loginResultMap">
+        SELECT * FROM online_bookstore.user
+        <where>
+            phone = '${phone}'
+            AND  password = '${password}'
+        </where>
+    </select>
+
+
+    <select id="getByID" resultMap="loginResultMap">
+        SELECT * FROM online_bookstore.user
+        <where>
+            id = '${userId}'
+        </where>
+    </select>
+
+    <select id="getAll" resultMap="loginResultMap">
+        SELECT * FROM online_bookstore.user
+    </select>
+
+    <insert id="register">
+        insert into online_bookstore.user value (#{userId},'customer',#{userName},#{phone},#{password});
+    </insert>
+
+
+</mapper>

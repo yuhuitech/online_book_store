@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="operations.OrderBooksDAO">
+
+    <resultMap id="OrderBooksResultMap" type="basis.OrderBooks">
+        <result property="orderID" column="orderID"/>
+        <result property="bookID" column="bookID"/>
+        <result property="amount" column="amount"/>
+    </resultMap>
+
+    <select id="get" resultMap="OrderBooksResultMap">
+        SELECT * FROM online_bookstore.orderbooks
+        <where>
+            orderID = '${orderID}'
+        </where>
+    </select>
+
+    <insert id="add">
+        insert into online_bookstore.orderbooks
+        value (#{orderID},#{bookID},#{amount});
+    </insert>
+
+    <delete id="delete">
+        DELETE FROM online_bookstore.orderbooks WHERE bookID = '${bookID}'
+    </delete>
+
+</mapper>
