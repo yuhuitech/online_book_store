@@ -1,4 +1,5 @@
 # OlineBookStore
+## 本项目是网上书店项目，基于WEB+Mybatis+jsp+MySQL开发
 > 开发部署：  
 > 用IDEA打开项目后
 
@@ -12,6 +13,3 @@
 <img src='README/run04.png'> 
 <img src='README/run05.png'> 
 <img src='README/run06.png'> 
-
-
-本项目是网上书店项目，基于WEB+Mybatis+jsp+MySQL开发，
